@@ -2,8 +2,11 @@ package me.dio.domain.model;
 
 import jakarta.persistence.*;
 
+import com.fasterxml.jackson.annotation.JsonPropertyOrder;
+
 import java.util.List;
 
+@JsonPropertyOrder({"id", "name", "account", "features", "card", "news"})
 @Entity(name = "tb_user")
 public class User {
 

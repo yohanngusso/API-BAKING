@@ -2,8 +2,11 @@ package me.dio.domain.model;
 
 import jakarta.persistence.*;
 
+import com.fasterxml.jackson.annotation.JsonPropertyOrder;
+
 import java.math.BigDecimal;
 
+@JsonPropertyOrder({"id", "number", "limit"})
 @Entity(name = "tb_card")
 public class Card {
     @Id
@@ -15,6 +18,14 @@ public class Card {
 
     @Column(name = "available_limit",scale = 2, precision = 13)
     private BigDecimal limit;
+
+    public Long getId() {
+        return id;
+    }
+
+    public void setId(Long id) {
+        this.id = id;
+    }
 
     public String getNumber() {
         return number;

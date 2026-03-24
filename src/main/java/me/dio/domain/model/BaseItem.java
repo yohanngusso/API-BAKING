@@ -1,10 +1,12 @@
 package me.dio.domain.model;
 
+import com.fasterxml.jackson.annotation.JsonPropertyOrder;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.MappedSuperclass;
 
+@JsonPropertyOrder({"id", "icon", "description"})
 @MappedSuperclass
 public abstract class BaseItem {
 
@@ -13,6 +15,14 @@ public abstract class BaseItem {
     private Long id;
     private String icon;
     private String description;
+
+    public Long getId() {
+        return id;
+    }
+
+    public void setId(Long id) {
+        this.id = id;
+    }
 
     public String getIcon() {
         return icon;

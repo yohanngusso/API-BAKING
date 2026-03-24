@@ -2,8 +2,11 @@ package me.dio.domain.model;
 
 import jakarta.persistence.*;
 
+import com.fasterxml.jackson.annotation.JsonPropertyOrder;
+
 import java.math.BigDecimal;
 
+@JsonPropertyOrder({"id", "agency", "number", "balance", "limit"})
 @Entity(name = "tb_account")
 public class Account {
 
