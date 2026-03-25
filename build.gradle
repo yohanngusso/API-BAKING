@@ -33,11 +33,20 @@ dependencies {
     testRuntimeOnly 'org.junit.platform:junit-platform-launcher'
 }
 
+/*
 tasks.jar{
     manifest{
         attributes["Main-Class"] = "me.dio.Application"
     }
 }
+* */
+
+bootJar {
+    enabled = true
+    mainClass = 'me.dio.Application'
+}
+
+
 
 
 tasks.named('test') {
